@@ -1,0 +1,5 @@
+rootProject.name = 'rnlib'
+
+include ':app'
+include ':rnupload'
+project(':rnupload').projectDir = new File(settingsDir, '../Libraries/rnbgupload/android')
