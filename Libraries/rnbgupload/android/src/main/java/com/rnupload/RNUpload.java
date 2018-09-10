@@ -45,7 +45,7 @@ public class RNUpload extends ReactContextBaseJavaModule {
     public void upload() {
         try {
             String filepath = Environment.getExternalStorageDirectory()+"/im.mp4";
-            UPData.addItem(new UPData("https://api.google.com/api/google/", filepath, FS.getSize(filepath), 1, 0, "RwW8eMXI0mJKrp5KhZHY3nWo9QzQBnz7wNOaXerQ"));
+            UPData.addItem(new UPData("https://api.google.com/api/upload/", filepath, FS.getSize(filepath), 3, 0, "1RwW8eMXI0mJKrp5KhZHY3nWo9QzQBnz7wNOaXerQ"));
             Upload.init();
         } catch (Exception e) {
             e.printStackTrace();

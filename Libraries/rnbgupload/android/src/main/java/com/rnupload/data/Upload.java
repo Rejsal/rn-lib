@@ -53,8 +53,14 @@ public class Upload {
 
                 try {
                     NetWork example = new NetWork();
-                    String url = uploadingObject.url+"";
-                    String response = example.post(url, FS.read(uploadingObject.fileUrl,uploadingObject.fileSize,0),uploadingObject.token);
+                    String url = uploadingObject.url+"?chunk="+i+"&chunks="+uploadingObject.totalCount+"&name=randam3.mp4";
+                  int  chunkSize = uploadingObject.fileSize/uploadingObject.totalCount;
+                    int skip = chunkSize*i;
+
+                    if( i+1 == uploadingObject.totalCount ){
+                        chunkSize =  uploadingObject.fileSize - skip;
+                    }
+                    String response = example.post(url, FS.read(uploadingObject.fileUrl,chunkSize,skip),uploadingObject.token);
                     System.out.println(response);
                 }catch (Exception e){
                     e.printStackTrace();
