@@ -1,6 +1,9 @@
 package com.rnlib;
 
+import android.content.Intent;
+
 import com.facebook.react.ReactActivity;
+import com.rnupload.RNUpload;
 
 public class MainActivity extends ReactActivity {
 
@@ -13,3 +16,6 @@ public class MainActivity extends ReactActivity {
         return "rnlib";
     }
 }
+
+
+
